@@ -103,7 +103,7 @@ class Window(QDialog):
         self.interval.setText("-2.5;3")
 
         # Ziarno
-        self.seed = QLineEdit()
+        self.seedW = QLineEdit()
 
         menu = QVBoxLayout()
         splitter1 = QSplitter(Qt.Vertical)
@@ -115,7 +115,7 @@ class Window(QDialog):
         menu.addWidget(self.iter_text)
         menu.addWidget(self.iter)
         menu.addWidget(self.text_seed)
-        menu.addWidget(self.seed)
+        menu.addWidget(self.seedW)
 
         #menu.addWidget(self.ag)
 
@@ -185,13 +185,13 @@ class Window(QDialog):
         print("n: ", self.n.text())
         print("Interval: ", self.interval.text())
         print("Doszło #-1")
-        print("Seed: ", self.seed.text())
+        print("Seed: ", self.seedW.text())
         print("Doszło #0")
 
-        if self.seed.text() == "":
+        if self.seedW.text() == "":
             self.seed = "-1"
         else:
-            self.seed = int(self.seed.text())
+            self.seed = int(self.seedW.text())
 
 
         self.ga = GeneticAlgorithm(int(self.iter.text()), int(self.population.text()), int(self.generation_number.text()),
